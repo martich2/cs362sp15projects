@@ -644,7 +644,7 @@ int getCost(int cardNumber)
 }
 
 
-int adventurerCard(int currentPlayer, struct gameState *state) {
+int adventurerRefactor(int currentPlayer, struct gameState *state) {
 	
   int temphand[MAX_HAND];
   int drawntreasure = 0;
@@ -676,7 +676,7 @@ int adventurerCard(int currentPlayer, struct gameState *state) {
 
 
 
-int smithyCard(int currentPlayer, struct gameState *state, int handPos) {
+int smithyRefactor(int currentPlayer, struct gameState *state, int handPos) {
   int i;
   for (i = 0; i < 3; i++)
     {
@@ -688,7 +688,7 @@ int smithyCard(int currentPlayer, struct gameState *state, int handPos) {
   return 0;
 }
 
-int cutpurseCard(int currentPlayer, struct gameState *state, int handPos) {
+int cutPurseRefactor(int currentPlayer, struct gameState *state, int handPos) {
   
   int i, j, k;
   
@@ -719,7 +719,7 @@ int cutpurseCard(int currentPlayer, struct gameState *state, int handPos) {
   return 0;
 }
 
-int embargoCard(int currentPlayer, struct gameState *state, int handPos, int choice1) {
+int embargoRefactor(int currentPlayer, struct gameState *state, int handPos, int choice1) {
   //+2 Coins
   state->coins = state->coins + 2;
   
@@ -738,7 +738,7 @@ int embargoCard(int currentPlayer, struct gameState *state, int handPos, int cho
 }
 
 
-int salvagerCard(int currentPlayer, struct gameState *state, int handPos, int choice1) {
+int salvagerRefactor(int currentPlayer, struct gameState *state, int handPos, int choice1) {
   //+1 buy
   state->numBuys++;
   
@@ -782,23 +782,23 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
     {
       //refactored cards 
     case smithy:
-      smithyCard(currentPlayer, state, handPos);
+      smithyRefactor(currentPlayer, state, handPos);
       return 0;	
 
     case adventurer:
-      adventurerCard(currentPlayer, state); 
+      adventurerRefactor(currentPlayer, state); 
       return 0;
       
     case cutpurse:
-      cutpurseCard(currentPlayer, state, handPos);
+      cutPurseRefactor(currentPlayer, state, handPos);
       return 0;
       
     case embargo: 
-      embargoCard(currentPlayer, state, handPos, choice1);	
+      embargoRefactor(currentPlayer, state, handPos, choice1);	
       return 0;
 
     case salvager:
-      salvagerCard(currentPlayer, state, handPos, choice1); 
+      salvagerRefactor(currentPlayer, state, handPos, choice1); 
       return 0;
 		
     case council_room:
