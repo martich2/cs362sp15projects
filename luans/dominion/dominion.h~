@@ -129,17 +129,17 @@ int getWinners(int players[MAX_PLAYERS], struct gameState *state);
    1, others to 0 */
 
 int func_adventurer(int, int, int, int *, struct gameState *);
-/*Set function for adventurer*/
+/**/
 
 int func_council_room(int, int, struct gameState *);
-/*Set function for council_room*/
+/**/
 
 int func_feast(int, int *, int, struct gameState *);
-/*Set function for feast*/
+/**/
 
 int func_mine(int, int, struct gameState *);
-/*Set function for mine*/
+/**/
 
 int func_embargo(int, int, struct gameState *);
-/*Set function for embargo*/
+/**/
 #endif
